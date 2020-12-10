@@ -1,0 +1,16 @@
+
+def rev(n):
+    rev=0
+    while n != 0:
+        rem=n%10
+        rev=rev*10 + rem
+        n=n//10
+    return rev
+    
+    
+n=int(input("Enter a number to check its reverse\n"))
+if n>0:
+    print(rev(n))
+else:
+    n=-n
+    print(-rev(n))
