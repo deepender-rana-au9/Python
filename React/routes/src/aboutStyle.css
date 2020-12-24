@@ -1,0 +1,28 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: rgb(35, 26, 43);
+  color: aliceblue;
+  width: 100%;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: rgb(86, 19, 145);
+  color: rgb(2, 8, 14);
+  width: 100%;
+}
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: rgb(155, 12, 12);
+  color: rgb(2, 8, 14);
+  width: 100%;
+}
