@@ -39,20 +39,18 @@ var city = [
     country_name: "India",
   },
 ];
-var menu = [
-  { link: "/", page: "Home" },
-  { link: "/hotel", page: "Hotel" },
-  { link: "/city", page: "City" },
-];
 
-//http://localhost:8700/city
-cityRouter.route("/").get(function (req, res) {
-  //res.send(city)
-  res.render("city", { title: "City Page", menu: menu });
-});
-//http://localhost:8700/city/details
-cityRouter.route("/details").get(function (req, res) {
-  res.send("City Details");
-});
+function router(menu) {
+  cityRouter.route("/").get(function (req, res) {
+    //res.send(city)
+    res.render("city", { title: "City Page", menu: menu });
+  });
+
+  cityRouter.route("/details").get(function (req, res) {
+    res.send("City Details");
+  });
+
+  return cityRouter;
+}
 
 module.exports = cityRouter;

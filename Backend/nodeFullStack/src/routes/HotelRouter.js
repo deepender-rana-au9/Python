@@ -485,21 +485,18 @@ var hotels = [
     ],
   },
 ];
-var menu = [
-  { link: "/", page: "Home" },
-  { link: "/hotel", page: "Hotel" },
-  { link: "/city", page: "City" },
-];
 
-//http://localhost:8700/hotel
-hotelRouter.route("/").get(function (req, res) {
-  //res.send(hotels)
-  res.render("hotel", { title: "Hotel Page", hoteldata: hotels, menu: menu });
-});
+function router(menu) {
+  hotelRouter.route("/").get(function (req, res) {
+    //res.send(hotels)
+    res.render("hotel", { title: "Hotel Page", hoteldata: hotels, menu: menu });
+  });
 
-//http://localhost:8700/hotel/details
-hotelRouter.route("/details").get(function (req, res) {
-  res.send("Hotel Details");
-});
+  //http://localhost:8700/hotel/details
+  hotelRouter.route("/details").get(function (req, res) {
+    res.send("Hotel Details");
+  });
+  return hotelRouter;
+}
 
 module.exports = hotelRouter;

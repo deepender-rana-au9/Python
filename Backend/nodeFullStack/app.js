@@ -1,8 +1,7 @@
 const { Router } = require("express");
 var express = require("express");
 var app = express();
-var cityRouter = require("./src/routes/CityRouter");
-var hotelRouter = require("./src/routes/HotelRouter");
+
 var port = 8700;
 
 var menu = [
@@ -10,6 +9,9 @@ var menu = [
   { link: "/hotel", page: "Hotel" },
   { link: "/city", page: "City" },
 ];
+
+var cityRouter = require("./src/routes/CityRouter")(menu);
+var hotelRouter = require("./src/routes/HotelRouter")(menu);
 
 //static path
 app.use(express.static(__dirname + "/public"));
