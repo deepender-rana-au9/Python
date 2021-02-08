@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #f1f1f1;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        nav {
+            background-color: rgb(29, 28, 28);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            position: fixed;
+            top: -50px;
+            transition: top 0.3s;
+
+        }
+
+        nav a {
+            padding: 2vh;
+            color: white;
+            text-decoration: none;
+
+            transition: 1s ease;
+
+        }
+
+        nav a:hover {
+            color: red;
+            text-decoration: none;
+            background-color: rgba(87, 87, 92, 0.534);
+
+        }
+
+        section {
+            padding: 20px 200px 2500px;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <a href="#">Logo</a>
+        <a href=#>Home</a>
+        <a href="#">About</a>
+        <a href=#>Profile</a>
+    </nav>
+    <section>
+        <h2>This example demonstrates how to slide down a navbar when the user starts to scroll the page.</h2>
+
+        <p>Scroll down this frame to see the effect!</p>
+
+        <p>Scroll to the top to hide the navbar.</p>
+
+        <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.</p>
+
+    </section>
+
+    <script>
+        window.onscroll = function () { scrolling() };
+
+        function scrolling() {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+                document.getElementById("nav").style.top = "0";
+
+            } else {
+                document.getElementById("nav").style.top = "-50px"
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
