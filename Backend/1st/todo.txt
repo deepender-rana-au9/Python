@@ -1,0 +1,12 @@
+Create Mongodb
+path: C/Program Files/Mongodb/server/4.4/bin
+mongod-to start server
+mongo-to start mongo shell
+Check database
+        >show dbs
+
+Go inside db or create new:
+        >use dbName
+
+To show collections:
+        >show collections
