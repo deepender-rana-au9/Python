@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background: rgb(214, 207, 169);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.element {
+  height: 10vh;
+  width: 10vh;
+
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+.glyphicon-divison {
+  font-size: 20px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+}

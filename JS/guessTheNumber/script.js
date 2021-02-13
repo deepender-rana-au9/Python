@@ -15,6 +15,7 @@ function playgame(randomNumber) {
 
   saveGuessHistory(number, guess);
   displayResult(number);
+  displayHistory();
 }
 
 function displayResult(number) {
@@ -58,14 +59,24 @@ function saveGuessHistory(number, guess) {
 }
 
 function displayHistory() {
-  let index;
+  let index = guess.length - 1;
   let list = "<ul class='list'>";
+  while (index > -1) {
+    list += "<li>" + "You guessed " + guess[index] + "</li>";
+    index--;
+  }
 
   list += "</ul>";
   document.getElementById("history").innerHTML = list;
 }
 
-function initGame() {}
+function initGame() {
+  document.getElementById("number-guess").value = "";
+  correctNumber = getRandomNumber();
+  console.log(correctNumber);
+  guess = [];
+  displayHistory();
+}
 
 function getRandomNumber() {
   let randomNumber = Math.floor(Math.random() * 100) + 1;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Calculator</title>
+    <link href="./cal.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="text"><input type="number" id="firstInput" placeholder="enter first number"></div>
+        <div class="icons">
+            <div class="firstTwo">
+                <div class="element " id="sum"><span class="glyphicon glyphicon-plus"></span></div>
+                <div class="element " id="sub"><span class="glyphicon glyphicon-minus"></span></div>
+            </div>
+            <div class="lastTwo">
+                <div class="element " id="multi"><span class="glyphicon glyphicon-remove"></span></div>
+                <div class="element " id="div"><span class="glyphicon-divison "><b>÷</b> </span></span></div>
+
+            </div>
+        </div>
+        <div class="text"><input type="number" id="secondInput" placeholder="enter second number"></div>
+        <div class="equal">=</div>
+        <div id="output"></div>
+        <div class="btn">
+            <button type="button" id="clear">Clear</button>
+        </div>
+    </div>
+
+
+</body>
+<script src="./sum.js"></script>
+
+</html>
