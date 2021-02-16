@@ -100,6 +100,40 @@ function sortMoviesByRank() {
   displayMovies(movies);
 }
 
-function sortMoviesByName() {}
+function sortMoviesByName() {
+  for (let j = 0; j < movies.length - 1; j++) {
+    let max_obj = movies[j];
+    let max_location = j;
 
-function sortMoviesById() {}
+    for (let i = j + 1; i < movies.length; i++) {
+      if (movies[i].title > max_obj.title) {
+        // Know max AND it's index (location)
+        max_obj = movies[i];
+        max_location = i;
+      }
+    }
+    // swap the first and the last
+    movies[max_location] = movies[j]; // --> 10
+    movies[j] = max_obj;
+  }
+  displayMovies(movies);
+}
+
+function sortMoviesById() {
+  for (let j = 0; j < movies.length - 1; j++) {
+    let max_obj = movies[j];
+    let max_location = j;
+
+    for (let i = j + 1; i < movies.length; i++) {
+      if (movies[i].id > max_obj.id) {
+        // Know max AND it's index (location)
+        max_obj = movies[i];
+        max_location = i;
+      }
+    }
+    // swap the first and the last
+    movies[max_location] = movies[j]; // --> 10
+    movies[j] = max_obj;
+  }
+  displayMovies(movies);
+}
