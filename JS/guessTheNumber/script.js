@@ -5,7 +5,14 @@ window.onload = function () {
   console.log(correctNumber);
   document.getElementById("btn-submit").addEventListener("click", playgame);
   document.getElementById("btn-restart").addEventListener("click", initGame);
+  // domEvents();
 };
+
+// function domEvents() {
+//   for (let i = 0; i < document.body.children.length; i++) {
+//     alert(document.body.children[i].innerText);
+//   }
+// }
 
 function playgame(randomNumber) {
   let number = document.getElementById("number-guess").value;
