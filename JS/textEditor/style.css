@@ -4,10 +4,12 @@
   padding: 10px;
   word-wrap: break-word;
   text-align: left;
+  border: 1px solid springgreen;
 }
 
 #text-input {
   min-height: 200px;
+  border: 1px solid black;
 }
 
 .editor .col {

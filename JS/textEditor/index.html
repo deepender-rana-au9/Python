@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
-    <title>repl.it</title>
+    <title>Text Editor</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="text-center container">
     <main>
-        <h1 class="banner p-3 text-primary">TextEditor</h1>
+        <h1 class="banner p-4 text-primary">TextEditor</h1>
         <div class="row">
             <div class="col">
                 <button id="bold" type="button" onclick="makeBold(this)" class="btn btn-light">Bold</button>
@@ -32,7 +32,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="text-input">Your Document Text</label>
-                    <textarea class="form-control" id="text-input" onkeyup="updateText()" rows="3"></textarea>
+                    <textarea class="form-control" id="text-input" oninput="updateText()"></textarea>
                 </div>
             </div>
             <div class="col">
