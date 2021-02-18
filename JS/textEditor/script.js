@@ -1,31 +1,31 @@
 /**
  * Update the output text as you type in the textarea
  */
-function updateText() {
+updateText = () => {
   let text = document.getElementById("text-input").value;
   document.getElementById("text-output").innerText = text;
-}
+};
 
 /**
  * Toggle the bold class for the output text
  */
-function makeBold(elem) {
+makeBold = (elem) => {
   elem.classList.toggle("active");
   document.getElementById("text-output").classList.toggle("bold");
-}
+};
 
 /**
  * Toggle the italic class for the output text
  */
-function makeItalic(elem) {
+makeItalic = (elem) => {
   elem.classList.toggle("active");
   document.getElementById("text-output").classList.toggle("italic");
-}
+};
 
 /**
  * Toggle the underline class for the output text
  */
-function makeUnderline(elem) {
+makeUnderline = (elem) => {
   elem.classList.toggle("active");
   let output = document.getElementById("text-output");
   if (output.classList.contains("underline")) {
@@ -33,17 +33,18 @@ function makeUnderline(elem) {
   } else {
     output.classList.add("underline");
   }
-}
+};
 
 /**
  * Toggle the style textAlign attribute
  * Toggle the active state for the align butttons
  */
-function alignText(elem, alignType) {
+alignText = (elem, alignType) => {
   document.getElementById("text-output").style.textAlign = alignType;
   let alignButtons = document.getElementsByClassName("align");
-  for (let i = 0; i < alignButtons.length; i++) {
-    alignButtons[i].classList.remove("active");
+
+  for (let button of alignButtons) {
+    button.classList.remove("active");
   }
   elem.classList.toggle("active");
-}
+};

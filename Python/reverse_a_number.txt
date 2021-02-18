@@ -1,4 +1,3 @@
-
 def rev(n):
     rev=0
     while n != 0:
