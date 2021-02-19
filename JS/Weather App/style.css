@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #0d0d0d;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin: 5vh;
+  color: #51e1ed;
+  font-size: 6vh;
+}
+
+#inputValue {
+  font-size: 3vh;
+  padding: 1vh 5vh;
+  border: 1px dotted white;
+  border-radius: 5px;
+}
+
+#button {
+  margin: 4vh;
+  padding: 1vh 3vh;
+  color: rgba(234, 236, 241, 0.979);
+  border-radius: 5px;
+  background: rgb(175, 145, 145);
+  font-weight: bold;
+  font-size: 3vh;
+}
+ul {
+  list-style: none;
+}
+
+h4,
+h1,
+.list {
+  text-align: center;
+  margin: 3vh;
+}
+#weatherOutput {
+  border: 1px dotted white;
+  min-width: 51.5vh;
+  min-height: 40vh;
+  border-radius: 5px;
+}
+.outputHeader {
+  border-bottom: 1px dotted white;
+}

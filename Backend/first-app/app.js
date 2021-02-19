@@ -1,5 +1,1 @@
-function sayHello(name) {
-  console.log("hello " + name);
-}
-
-sayHello("Deepender");
+console.log(module);
