@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1 style="text-align: center; background: black;color: white;position: absolute; top: 45vh; left: 45vh;">
+        Inheritance
+    </h1>
+    <script>
+
+
+        class User {
+            constructor(firstName, lastName, userHobbies) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.userHobbies = userHobbies;
+            }
+
+            getFullName = () => {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        class AdminUser extends User {
+            setPassword = (password) => {
+                this.password = password;
+            }
+            getPassword = () => {
+                return this.password
+            }
+        }
+
+        let John = new User("John", "Davis", ["soccer", "volleyball"]);
+        console.log(John);
+        let Nazariy = new AdminUser("Nazariy", "Dumanskyy", ["dancing"]);
+        Nazariy.setPassword("abc")
+        console.log(Nazariy.getPassword())
+
+
+        //Create class AdminUser
+        //Create admin password
+        //Create function for changePassword 
+    </script>
+</body>
+
+</html>
