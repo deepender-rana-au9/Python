@@ -1,0 +1,31 @@
+a {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #002349;
+}
+
+.navigation {
+  margin-top: 16px;
+}
+
+#individual-post-title {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+#individual-post-date {
+  border-top: 1px solid #9d9fa0;
+  border-bottom: 1px solid #9fa0a1;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  padding-left: 16px;
+  color: #4e4f50;
+}
+
+#individual-post-content {
+  padding: 24px 16px 0 16px;
+  color: #495057;
+}
