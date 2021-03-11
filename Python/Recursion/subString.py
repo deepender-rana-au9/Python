@@ -13,14 +13,14 @@
 
 # With recursion
 def subStrings(string, res, idx):
-    if idx > len(string):
+    if idx == len(string):
         print(res)
         return
-    subStrings(string, res + string[:idx], idx+1)
-    subStrings(string, res, idx+1)
+    subStrings(string, res + string[idx], idx+1)  # Adding a character
+    subStrings(string, res, idx+1)  # Skipping a character
 
 
 string = input("Enter a string ")
-res = []
+res = ""
 idx = 0
 subStrings(string, res, idx)
