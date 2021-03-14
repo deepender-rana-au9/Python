@@ -9,6 +9,7 @@ import ClassClick from "./components/ClassClick";
 import EventBind from "./components/EventBind";
 import ParentComp from "./components/PrentComp";
 import UserGreeting from "./components/UserGreeting";
+import NameList from "./components/NameList";
 
 class App extends Component {
   render() {
@@ -24,7 +25,8 @@ class App extends Component {
           <ClassClick /> */}
           {/* <EventBind /> */}
           {/* <ParentComp /> */}
-          <UserGreeting />
+          {/* <UserGreeting /> */}
+          <NameList />
         </header>
       </div>
     );
