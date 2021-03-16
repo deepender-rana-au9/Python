@@ -10,7 +10,8 @@ import EventBind from "./components/EventBind";
 import ParentComp from "./components/PrentComp";
 import UserGreeting from "./components/UserGreeting";
 import NameList from "./components/NameList";
-
+import Form from "./components/Form";
+import LifecycleA from "./components/LifecycleA";
 class App extends Component {
   render() {
     return (
@@ -26,7 +27,9 @@ class App extends Component {
           {/* <EventBind /> */}
           {/* <ParentComp /> */}
           {/* <UserGreeting /> */}
-          <NameList />
+          {/* <NameList /> */}
+          {/* <Form /> */}
+          <LifecycleA />
         </header>
       </div>
     );
