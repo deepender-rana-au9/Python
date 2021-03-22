@@ -6,6 +6,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../keys");
 const requireLogin = require("../middlewares/requireLogin");
+const validator = require("email-validator");
 
 router.get("/protected", requireLogin, (req, res) => res.send("Hello User"));
 
@@ -13,27 +14,31 @@ router.post("/signup", (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
   if (!name || !email || !password || !confirmPassword) {
     return res.status(422).json({ err: "All the fields are compulsory" });
-  } else if (password === confirmPassword) {
-    bcrypt.hash(password, 12).then((hashedPassword) => {
-      User.findOne({ email })
-        .then((savedUser) => {
-          if (savedUser) {
-            return res.status(422).json({ err: "Email already Used" });
-          }
-          const user = new User({
-            name,
-            email,
-            password: hashedPassword,
-          });
-          user
-            .save()
-            .then((user) => res.json({ message: "saved successfully" }))
-            .catch((err) => console.log(err));
-        })
-        .catch((err) => console.log(err));
-    });
+  } else if (validator.validate(email)) {
+    if (password === confirmPassword) {
+      bcrypt.hash(password, 12).then((hashedPassword) => {
+        User.findOne({ email })
+          .then((savedUser) => {
+            if (savedUser) {
+              return res.status(422).json({ err: "Email already Used" });
+            }
+            const user = new User({
+              name,
+              email,
+              password: hashedPassword,
+            });
+            user
+              .save()
+              .then((user) => res.json({ message: "saved successfully" }))
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
+      });
+    } else {
+      return res.status(422).json({ err: "Password mismatch" });
+    }
   } else {
-    return res.json({ err: "Password mismatch" });
+    return res.json({ err: "Email Badly formated" });
   }
 });
 
@@ -52,7 +57,8 @@ router.post("/signin", (req, res) => {
           if (matched) {
             // return res.json({ message: "Logged in" });
             const token = jwt.sign({ _id: userFounded._id }, JWT_SECRET);
-            res.json({ token });
+            const { _id, name, email } = userFounded;
+            res.json({ token, user: { _id, name, email } });
           } else {
             return res.json({ err: "Invalid email or password" });
           }

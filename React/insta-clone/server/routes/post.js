@@ -5,15 +5,30 @@ const mongoose = require("mongoose");
 const Post = mongoose.model("Post");
 const requireLogin = require("../middlewares/requireLogin");
 
+// const multer = require("multer");
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "../uploads/");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, new Date().toISOString() + file.originalname);
+//   },
+// });
+// const upload = multer({ storage });
+
 router.post("/createpost", requireLogin, (req, res) => {
-  const { title, subTitle, body } = req.body;
-  if (!title || !body) {
+  const { title, subTitle, photo, body } = req.body;
+  //
+
+  if (!title || !photo) {
     return res.status(422).json({ err: "All fields are mandatory" });
   }
   req.user.password = undefined;
   const post = new Post({
     title,
     subTitle,
+    photo,
     body,
     postedBy: req.user,
   });
@@ -26,7 +41,7 @@ router.post("/createpost", requireLogin, (req, res) => {
   });
 });
 
-router.get("/allposts", (req, res) => {
+router.get("/allposts", requireLogin, (req, res) => {
   Post.find()
     .populate("postedBy", "_id name")
     .then((posts) => {
@@ -48,6 +63,42 @@ router.get("/mypost", requireLogin, (req, res) => {
         res.json({ post });
       }
     });
+});
+
+router.put("/like", requireLogin, (req, res) => {
+  Post.findByIdAndUpdate(
+    req.body.postId,
+    {
+      $push: { likes: req.user._id },
+    },
+    {
+      new: true,
+    }
+  ).exec((err, result) => {
+    if (err) {
+      return res.status(422).json({ err });
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+router.put("/unlike", requireLogin, (req, res) => {
+  Post.findByIdAndUpdate(
+    req.body.postId,
+    {
+      $pull: { likes: req.user._id },
+    },
+    {
+      new: true,
+    }
+  ).exec((err, result) => {
+    if (err) {
+      return res.status(422).json({ err });
+    } else {
+      res.json(result);
+    }
+  });
 });
 
 module.exports = router;
