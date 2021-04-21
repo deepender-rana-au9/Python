@@ -1,8 +1,8 @@
 a {
   padding: 8px;
-  border: 1px solid black;
+  border: 1px solid rgb(33, 14, 117);
   border-radius: 8px;
-  background-color: #002349;
+  color: rgb(33, 14, 117);
 }
 
 .navigation {
@@ -28,4 +28,5 @@ a {
 #individual-post-content {
   padding: 24px 16px 0 16px;
   color: #495057;
+  line-height: 1.4rem;
 }
