@@ -16,10 +16,14 @@
 
         </div>
         <div class="main">
-            <img id="rock" src="./assets/rock.jfif" alt="loading." height="150" width="140" />
-            <img id="rock" src="./assets/paper.jfif" alt="loading." height="150" width="140" />
-            <img id="rock" src="./assets/scissor.jfif" alt="loading." height="150" width="140" />
+            <img id="rock" src="./assets/rock.jfif" alt="loading." height="150" width="140" onclick=rpsGame(this) />
+            <img id="paper" src="./assets/paper.jfif" alt="loading." height="150" width="140" onclick=rpsGame(this) />
+            <img id="scissors" src="./assets/scissor.jfif" alt="loading." height="150" width="140"
+                onclick=rpsGame(this) />
 
+        </div>
+        <div>
+            <button onclick=reset()>Reset</button>
         </div>
 
     </div>
